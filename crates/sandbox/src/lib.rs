@@ -127,6 +127,29 @@ impl EthereumSandbox {
     }
 }
 
+
+/// Wrapper For Spawning a ethereum instance using the provider
+/// Used for deploying on the main network purposes
+pub struct EthereumInstance {
+    client: Arc<LocalWalletSignerMiddleware>
+}
+
+impl EthereumInstance {
+    pub fn spawn(rpc_url: String, priv_key: String, chain_id: u64) -> Self {
+
+        let provider = Provider::<Http>::try_from(rpc_url).expect("Failed to connect to the given rpc url");
+        let wallet: LocalWallet = priv_key.parse::<LocalWallet>().unwrap();
+
+        let client = SignerMiddleware::new(provider.clone(), wallet.with_chain_id(chain_id));
+
+        Self { client: Arc::new(client) }
+    }
+
+    pub fn client(&self) -> Arc<LocalWalletSignerMiddleware> {
+        self.client.clone()
+    }
+}
+
 /// Deploys new smart contract using:
 ///     - Forge build artifacts (JSON file contents)
 ///     - Constructor args (use () if no args expected)
