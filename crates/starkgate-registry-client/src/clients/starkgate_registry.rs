@@ -1,8 +1,8 @@
 use std::sync::Arc;
 
-use crate::{interfaces::{
-    StarkgateRegistry, ProxySupport
-}, LocalWalletSignerMiddleware, StarknetContractClient};
+use starknet_zaun_utils::proxy_support::ProxySupport;
+use starknet_zaun_utils::{ LocalWalletSignerMiddleware, StarknetContractClient };
+use crate::interfaces::registry::StarkgateRegistry;
 
 use ethers::types::Address;
 

@@ -7,7 +7,7 @@ use ethers::{
     types::{Address, Bytes, TransactionReceipt, I256, U256},
 };
 
-use starknet_zaun_utils::errors::Error;
+use crate::errors::Error;
 
 abigen!(
     ProxySupport,

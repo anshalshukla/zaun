@@ -2500,6 +2500,7 @@ dependencies = [
  "hex",
  "serde_json",
  "starknet-core-contract-client",
+ "starknet-zaun-utils",
  "thiserror",
  "tokio",
 ]
@@ -2765,6 +2766,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "starkgate-manager-client"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "ethers",
+ "log",
+ "num-traits",
+ "starknet-zaun-utils",
+ "thiserror",
+]
+
+[[package]]
+name = "starkgate-registry-client"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "ethers",
+ "log",
+ "num-traits",
+ "starknet-zaun-utils",
+ "thiserror",
+]
+
+[[package]]
 name = "starknet-core-contract-client"
 version = "0.1.0"
 dependencies = [
@@ -2772,6 +2797,55 @@ dependencies = [
  "ethers",
  "log",
  "num-traits",
+ "starknet-zaun-utils",
+ "thiserror",
+]
+
+[[package]]
+name = "starknet-erc20-client"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "ethers",
+ "log",
+ "num-traits",
+ "starknet-zaun-utils",
+ "thiserror",
+]
+
+[[package]]
+name = "starknet-eth-bridge-client"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "ethers",
+ "log",
+ "num-traits",
+ "starknet-zaun-utils",
+ "thiserror",
+]
+
+[[package]]
+name = "starknet-token-bridge-client"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "ethers",
+ "log",
+ "num-traits",
+ "starknet-zaun-utils",
+ "thiserror",
+]
+
+[[package]]
+name = "starknet-zaun-utils"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "ethers",
+ "log",
+ "num-traits",
+ "serde_json",
  "thiserror",
 ]
 

@@ -7,10 +7,10 @@ use ethers::{
 use ethers::contract::ContractError;
 use ethers::prelude::TransactionReceipt;
 
-use crate::Error;
+use starknet_zaun_utils::errors::Error;
 
 abigen!(
-    DaiERC20Token,
+    ERC20Token,
     r#"[
         function name() public view virtual returns (string memory)
         function symbol() public view virtual returns (string memory)
@@ -22,7 +22,7 @@ abigen!(
 );
 
 #[async_trait]
-pub trait DaiERC20TokenTrait<M: Middleware> {
+pub trait ERC20TokenTrait<M: Middleware> {
     async fn name(&self) -> Result<String, Error<M>>;
     async fn symbol(&self) -> Result<String, Error<M>>;
     async fn total_supply(&self) -> Result<U256, Error<M>>;
@@ -32,9 +32,9 @@ pub trait DaiERC20TokenTrait<M: Middleware> {
 }
 
 #[async_trait]
-impl<T, M: Middleware> DaiERC20TokenTrait<M> for T
+impl<T, M: Middleware> ERC20TokenTrait<M> for T
     where
-        T: AsRef<DaiERC20Token<M>> + Send + Sync,
+        T: AsRef<ERC20Token<M>> + Send + Sync,
 {
     async fn name(&self) -> Result<String, Error<M>> {
         self.as_ref()

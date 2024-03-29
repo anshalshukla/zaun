@@ -6,7 +6,7 @@ use ethers::{
     types::{TransactionReceipt, H160, U256},
 };
 
-use crate::Error;
+use starknet_zaun_utils::errors::Error;
 
 type Address = H160;
 
