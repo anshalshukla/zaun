@@ -1,11 +1,10 @@
 [package]
-name = "sandbox"
+name = "ethereum-instance"
 edition.workspace = true
 version.workspace = true
 authors.workspace = true
 
 [dependencies]
-starknet-core-contract-client = { path = "../starknet-core-contract-client" }
 ethers = { workspace = true }
 dirs = { workspace = true }
 serde_json = { workspace = true }

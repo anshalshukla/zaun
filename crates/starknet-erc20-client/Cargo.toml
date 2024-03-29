@@ -15,3 +15,4 @@ num-traits = { workspace = true }
 async-trait = { workspace = true }
 utils = { path = "../utils" }
 starknet-proxy-client = { path = "../starknet-proxy-client"}
+ethereum-instance = { path = "../ethereum-instance" }

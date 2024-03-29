@@ -1,8 +1,11 @@
-use ethers::contract::ContractError;
+use ethers::abi::Tokenize;
+use ethers::contract::{ContractError, ContractFactory, ContractInstance};
 use ethers::prelude::SignerMiddleware;
 use ethers::providers::{Http, Provider, ProviderError};
 use ethers::signers::{LocalWallet, Signer};
 use ethers::utils::{Anvil, AnvilInstance};
+use ethers::types::Bytes;
+use hex::FromHex;
 use std::path::PathBuf;
 use std::sync::Arc;
 use std::time::Duration;
@@ -137,4 +140,38 @@ impl EthereumInstance {
     pub fn client(&self) -> Arc<LocalWalletSignerMiddleware> {
         self.client.clone()
     }
+}
+
+pub async fn deploy_contract<T: Tokenize>(
+    client: Arc<LocalWalletSignerMiddleware>,
+    contract_build_artifacts: &str,
+    contructor_args: T,
+) -> Result<ContractInstance<Arc<LocalWalletSignerMiddleware>, LocalWalletSignerMiddleware>, Error>
+{
+    let (abi, bytecode) = {
+        let mut artifacts: serde_json::Value = serde_json::from_str(contract_build_artifacts)?;
+        let abi_value = artifacts
+            .get_mut("abi")
+            .ok_or_else(|| Error::ContractBuildArtifacts("abi"))?
+            .take();
+        let bytecode_value = artifacts
+            .get_mut("bytecode")
+            .ok_or_else(|| Error::ContractBuildArtifacts("bytecode"))?
+            .get_mut("object")
+            .ok_or_else(|| Error::ContractBuildArtifacts("bytecode.object"))?
+            .take();
+
+        let abi = serde_json::from_value(abi_value)?;
+        let bytecode = Bytes::from_hex(bytecode_value.as_str().ok_or(Error::BytecodeObject)?)?;
+        (abi, bytecode)
+    };
+
+    let factory = ContractFactory::new(abi, bytecode, client.clone());
+
+    Ok(factory
+        .deploy(contructor_args)
+        .map_err(Into::<ContractError<LocalWalletSignerMiddleware>>::into)?
+        .send()
+        .await
+        .map_err(Into::<ContractError<LocalWalletSignerMiddleware>>::into)?)
 }

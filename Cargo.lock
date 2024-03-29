@@ -748,6 +748,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "ethereum-instance"
+version = "0.1.0"
+dependencies = [
+ "dirs",
+ "ethers",
+ "hex",
+ "serde_json",
+ "thiserror",
+ "tokio",
+ "utils",
+]
+
+[[package]]
 name = "ethereum-types"
 version = "0.14.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2492,20 +2505,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "sandbox"
-version = "0.1.0"
-dependencies = [
- "dirs",
- "ethers",
- "hex",
- "serde_json",
- "starknet-core-contract-client",
- "thiserror",
- "tokio",
- "utils",
-]
-
-[[package]]
 name = "scale-info"
 version = "2.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2809,6 +2808,7 @@ name = "starknet-erc20-client"
 version = "0.1.0"
 dependencies = [
  "async-trait",
+ "ethereum-instance",
  "ethers",
  "log",
  "num-traits",
@@ -2835,6 +2835,7 @@ name = "starknet-proxy-client"
 version = "0.1.0"
 dependencies = [
  "async-trait",
+ "ethereum-instance",
  "ethers",
  "log",
  "num-traits",
