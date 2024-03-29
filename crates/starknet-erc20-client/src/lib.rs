@@ -1,7 +1,8 @@
 use std::sync::Arc;
 
 use clients::erc20::ERC20ContractClient;
-use utils::{deploy::{deploy_contract, Error}, LocalWalletSignerMiddleware};
+use starknet_proxy_client::deploy::{deploy_contract, Error};
+use utils::LocalWalletSignerMiddleware;
 
 pub mod clients;
 pub mod interfaces;

@@ -1,5 +1,4 @@
 pub mod errors;
-pub mod deploy;
 use std::sync::Arc;
 use ethers::types::Address;
 use ethers::prelude::SignerMiddleware;

@@ -1,7 +1,8 @@
 use std::sync::Arc;
 
 use clients::token_bridge::StarknetTokenBridgeContractClient;
-use utils::{deploy::{deploy_contract_behind_unsafe_proxy, Error}, LocalWalletSignerMiddleware};
+use starknet_proxy_client::deploy::{deploy_contract_behind_unsafe_proxy, Error};
+use utils::LocalWalletSignerMiddleware;
 
 pub mod clients;
 pub mod interfaces;

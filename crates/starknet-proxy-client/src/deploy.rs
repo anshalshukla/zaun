@@ -5,7 +5,7 @@ use ethers::prelude::{ContractFactory, ContractInstance};
 use ethers::providers::ProviderError;
 use ethers::types::Bytes;
 use ethers::utils::hex::{self, FromHex};
-use crate::LocalWalletSignerMiddleware;
+use utils::LocalWalletSignerMiddleware;
 
 #[derive(Debug, thiserror::Error)]
 pub enum Error {

@@ -2812,6 +2812,7 @@ dependencies = [
  "ethers",
  "log",
  "num-traits",
+ "starknet-proxy-client",
  "thiserror",
  "utils",
 ]

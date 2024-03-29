@@ -1,8 +1,8 @@
 use std::sync::Arc;
 
 use clients::starkgate_manager::StarkgateManagerContractClient;
-use utils::{deploy::{deploy_contract_behind_unsafe_proxy, Error}, LocalWalletSignerMiddleware};
-
+use starknet_proxy_client::deploy::{deploy_contract_behind_unsafe_proxy, Error};
+use utils::LocalWalletSignerMiddleware;
 mod clients;
 mod interfaces;
 
