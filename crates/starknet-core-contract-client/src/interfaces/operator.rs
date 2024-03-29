@@ -6,7 +6,7 @@ use ethers::{
     types::{Address, TransactionReceipt},
 };
 
-use starknet_zaun_utils::errors::Error;
+use utils::errors::Error;
 
 abigen!(
     Operator,

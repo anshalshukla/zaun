@@ -7,7 +7,7 @@ use ethers::{
 use ethers::contract::ContractError;
 use ethers::prelude::TransactionReceipt;
 
-use starknet_zaun_utils::errors::Error;
+use utils::errors::Error;
 
 abigen!(
     ERC20Token,

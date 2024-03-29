@@ -11,7 +11,7 @@ use std::time::Duration;
 /// Ethers library allows multiple signer backends and transports.
 /// For simplicity we use local wallet (basically private key) and
 /// HTTP transport in this crate.
-pub use starknet_zaun_utils::LocalWalletSignerMiddleware;
+pub use utils::LocalWalletSignerMiddleware;
 
 /// Sandbox is typically used for E2E scenarios so we need to speed things up
 const POLLING_INTERVAL_MS: u64 = 10;

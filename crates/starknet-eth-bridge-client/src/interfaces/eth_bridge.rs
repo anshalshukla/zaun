@@ -8,7 +8,7 @@ use ethers::{
 };
 use ethers::prelude::H160;
 
-use starknet_zaun_utils::errors::Error;
+use utils::errors::Error;
 
 type Address = H160;
 

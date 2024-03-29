@@ -6,7 +6,7 @@ use ethers::{
     types::{TransactionReceipt, U256},
 };
 
-use starknet_zaun_utils::errors::Error;
+use utils::errors::Error;
 
 type MessageHash = [u8; 32];
 

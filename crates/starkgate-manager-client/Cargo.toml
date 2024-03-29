@@ -13,4 +13,4 @@ log = { workspace = true }
 thiserror = { workspace = true }
 num-traits = { workspace = true }
 async-trait = { workspace = true }
-starknet-zaun-utils = { path = "../starknet-zaun-utils" }
+utils = { path = "../utils" }

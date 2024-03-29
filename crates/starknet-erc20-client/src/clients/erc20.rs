@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-use starknet_zaun_utils::{ LocalWalletSignerMiddleware, StarknetContractClient };
+use utils::{ LocalWalletSignerMiddleware, StarknetContractClient };
 use crate::interfaces::erc20::ERC20Token;
 
 use ethers::types::Address;

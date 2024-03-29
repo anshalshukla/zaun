@@ -1,5 +1,5 @@
 [package]
-name = "starknet-zaun-utils"
+name = "utils"
 authors.workspace = true
 edition.workspace = true
 repository.workspace = true

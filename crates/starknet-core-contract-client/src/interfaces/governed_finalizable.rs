@@ -3,7 +3,7 @@ use ethers::{
     contract::ContractError, prelude::abigen, providers::Middleware, types::TransactionReceipt,
 };
 
-use starknet_zaun_utils::errors::Error;
+use utils::errors::Error;
 
 abigen!(
     GovernedFinalizable,
