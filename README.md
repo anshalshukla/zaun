@@ -1,6 +1,6 @@
 # Zaun
 
-A development environment for Starknet Solidity contracts. This repository contains interfaces and functions to interact with starknet solidity contracts.
+This repository contains interfaces and functions to interact with starknet solidity contracts.
 
 ## Setup
 
