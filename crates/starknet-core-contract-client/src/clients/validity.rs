@@ -3,7 +3,7 @@ use std::sync::Arc;
 use ethers::abi::Address;
 
 use crate::interfaces::{Operator, StarknetMessaging, StarknetValidityContract};
-use utils::proxy_support::ProxySupport;
+use starknet_proxy_client::proxy_support::ProxySupport;
 use utils::LocalWalletSignerMiddleware;
 
 

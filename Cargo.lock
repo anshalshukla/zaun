@@ -2773,6 +2773,7 @@ dependencies = [
  "ethers",
  "log",
  "num-traits",
+ "starknet-proxy-client",
  "thiserror",
  "utils",
 ]
@@ -2785,6 +2786,7 @@ dependencies = [
  "ethers",
  "log",
  "num-traits",
+ "starknet-proxy-client",
  "thiserror",
  "utils",
 ]
@@ -2797,6 +2799,7 @@ dependencies = [
  "ethers",
  "log",
  "num-traits",
+ "starknet-proxy-client",
  "thiserror",
  "utils",
 ]
@@ -2821,6 +2824,20 @@ dependencies = [
  "ethers",
  "log",
  "num-traits",
+ "starknet-proxy-client",
+ "thiserror",
+ "utils",
+]
+
+[[package]]
+name = "starknet-proxy-client"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "ethers",
+ "log",
+ "num-traits",
+ "serde_json",
  "thiserror",
  "utils",
 ]
@@ -2833,6 +2850,7 @@ dependencies = [
  "ethers",
  "log",
  "num-traits",
+ "starknet-proxy-client",
  "thiserror",
  "utils",
 ]

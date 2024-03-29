@@ -1,5 +1,4 @@
 pub mod errors;
-pub mod proxy_support;
 pub mod deploy;
 use std::sync::Arc;
 use ethers::types::Address;

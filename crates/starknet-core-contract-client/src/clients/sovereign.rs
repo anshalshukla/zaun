@@ -4,7 +4,7 @@ use crate::interfaces::{
         GovernedFinalizable, Operator, StarknetGovernance, StarknetMessaging,
         StarknetSovereignContract,
     };
-use utils::proxy_support::ProxySupport;
+use starknet_proxy_client::proxy_support::ProxySupport;
 use utils::{ LocalWalletSignerMiddleware, StarknetContractClient };
 use ethers::types::Address;
 
