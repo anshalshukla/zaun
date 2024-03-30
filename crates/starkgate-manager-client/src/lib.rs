@@ -3,8 +3,8 @@ use std::sync::Arc;
 use clients::starkgate_manager::StarkgateManagerContractClient;
 use starknet_proxy_client::deploy::{deploy_contract_behind_unsafe_proxy, Error};
 use utils::LocalWalletSignerMiddleware;
-mod clients;
-mod interfaces;
+pub mod clients;
+pub mod interfaces;
 
 const STARKGATE_MANAGER: &str = include_str!("./artifacts/StarkgateManager.json");
 
