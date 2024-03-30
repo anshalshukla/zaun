@@ -1,4 +1,3 @@
-use std::ops::Add;
 use async_trait::async_trait;
 use ethers::{
     contract::ContractError,
