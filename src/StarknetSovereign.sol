@@ -13,7 +13,6 @@ import "starkware/solidity/interfaces/ContractInitializer.sol";
 import "starkware/solidity/interfaces/Identity.sol";
 import "starkware/solidity/interfaces/IFactRegistry.sol";
 import "starkware/solidity/interfaces/ProxySupport.sol";
-import "starkware/solidity/libraries/NamedStorage.sol";
 
 contract Starknet is
     Identity,

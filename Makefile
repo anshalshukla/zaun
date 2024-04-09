@@ -9,5 +9,5 @@ artifacts:
 	mkdir crates/starknet-proxy-client/src/artifacts || true
 	mkdir crates/starknet-core-contract-client/src/artifacts || true
 	forge build
-	cp out/UnsafeProxy.sol/UnsafeProxy.json crates/starknet-proxy-client/src/artifacts/
+	cp out/Proxy.sol/Proxy.json crates/starknet-proxy-client/src/artifacts/
 	cp out/StarknetSovereign.sol/Starknet.json crates/starknet-core-contract-client/src/artifacts/
