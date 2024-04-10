@@ -27,7 +27,7 @@ pub enum Error {
     DeployContract(#[from] ethereum_instance::Error)
 }
 
-const UNSAFE_PROXY: &str = include_str!("./artifacts/Proxy.json");
+const PROXY: &str = include_str!("./artifacts/Proxy.json");
 
 /// Deploys new unsafe proxy contract:
 ///     - Implementation can be set only once at initialization
@@ -40,7 +40,7 @@ pub async fn deploy_contract_behind_unsafe_proxy<T: Tokenize>(
     let contract = deploy_contract(client.clone(), contract_path, constructor_args).await?;
 
     let proxy_contract =
-        deploy_contract(client.clone(), UNSAFE_PROXY, contract.address()).await?;
+        deploy_contract(client.clone(), PROXY, contract.address()).await?;
 
     return Ok(proxy_contract);
 }
